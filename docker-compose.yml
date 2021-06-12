@@ -1,0 +1,15 @@
+#contains configuration of all the services that make up our project
+# volume allows us to get updates from our app into our docker image in realtime
+# sh = shell -c = command
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c 'python manage.py runserver 0.0.0.0:8000'

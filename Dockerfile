@@ -19,4 +19,3 @@ COPY ./app /app
 # this is for security reasons, image will run application on root account without this step
 RUN adduser -D user
 USER user
-
